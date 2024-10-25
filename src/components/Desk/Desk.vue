@@ -27,7 +27,7 @@ export default {
   <div class="Desk flex flex-row justify-start items-start gap-3.5 p-1 ">
 <!--    Header-->
       <div class="Header bg-white rounded-3xl flex justify-start items-start flex-col w-[60%] h-[70%]">
-        <h2 class="text-[20px] w-[100%] h-[50px] p-5 text-white font-bold">{{nameDesk}}</h2>
+        <h2 class="flex justify-center items-center text-[20px] w-[100%] h-[50px] p-5 text-white font-bold rounded-3xl" :style="`background: ${colorDesk}`">{{nameDesk}}</h2>
         <AddCard :toggle-close="this.AddCard" :arr-info="this.arr" :color="colorDesk"></AddCard>
       </div>
 

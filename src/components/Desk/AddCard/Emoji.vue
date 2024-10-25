@@ -4,8 +4,8 @@
      flex justify-center items-center cursor-pointer text-[25px] rounded-3xl select-none">
       {{ emoji }}
     </div>
-    <div v-show="show" class="Table flex flex-wrap w-[400px] h-[200px] right-0 absolute mb-[60px] overflow-y-auto">
-      <div v-for="(emoji,index) in listEmoji" @click="selectEmoji(emoji)" class="Emoji text-[30px] w-[50px] h-[50px] select-none">{{ emoji }}</div>
+    <div v-show="show" class="Table flex flex-wrap w-[300px] h-[200px]  absolute  overflow-y-auto">
+      <div v-for="(emoji,index) in listEmoji" @click="selectEmoji(emoji)" class="Emoji text-[15px] w-[25px] h-[25px] cursor-pointer select-none">{{ emoji }}</div>
 
     </div>
   </div>
@@ -17,7 +17,7 @@
 export default {
   data() {
     return {
-      show: true,
+      show: false,
       listEmoji: Array.from({length: 900}, (_, i) => String.fromCodePoint(127808 + (i + 2))),
       emoji: '🍎',
     }
@@ -55,6 +55,7 @@ export default {
   border-radius: 20px;
   box-shadow: 0px 5px 10px black;
   transition: 0.2s;
+
 }
 .Table::-webkit-scrollbar {
   width: 10px;
@@ -70,8 +71,6 @@ export default {
   border-radius: 20px;
 }
 .Emoji{
-  //box-shadow: 0px 0px 2px black;
-  margin: 2px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -6,9 +6,6 @@
     </div>
     <div v-show="show" class="Table flex flex-wrap w-[300px] h-[200px]  absolute  overflow-y-auto">
       <div v-for="(emoji,index) in listEmoji" @click="selectEmoji(emoji)" class="Emoji text-[15px] w-[25px] h-[25px] cursor-pointer select-none">{{ emoji }}</div>
-      <div>
-        hello
-      </div>
     </div>
   </div>
 

@@ -1,57 +1,23 @@
+<script>
+import ListFunck from '@/components/FuncList/ListFunck.vue'
+import Profile from '@/components/FuncList/Profile.vue'
+import RootDesk from '@/components/Desck/RootDesk.vue'
+export default {
+  components: {RootDesk, ListFunck, Profile},
+  methods: {},
+  
+}
+</script>
+
 <template>
 
-  <Grid>
-    <template v-slot:profile>
-      <Profile></Profile>
-    </template>
-
-    <template v-slot:Adddesk>
-      <CreaateDesk :listDesk="arrDesk" :toggle-desc="Desk" @update:toggle-desc="updateDesk"></CreaateDesk>
-    </template>
-      <template v-slot:desk>
-        <div v-if="arrDesk.length === 0">
-          У вас нет доступных расчетов 😐
-        </div>
-        <template v-else>
-          <Desk v-show="TogDesk?.name === desk?.name"
-                v-for="desk in arrDesk" :key="desk.name"
-                :name-desk="desk.name"
-                :color-desk="desk.colorDesck"
-                :nullable="true"></Desk>
-        </template>
-      </template>
-
-  </Grid>
-
+<div class="w-[100%] h-[100vh] bg-black flex flex-row text-white p-1 gap-3.5" style="background: #01874f">
+  <div class="w-[20%] h-[100%] flex flex-col gap-3.5">
+    <Profile></Profile>
+    <ListFunck></ListFunck>
+  </div>
+  <RootDesk></RootDesk>
+</div>
 
 </template>
-
-<script setup>
-import Grid from './components/Grid/Grid.vue'
-import Profile from '@/components/Profile/Profile.vue'
-import Desk from '@/components/Desk/Desk.vue'
-import CreaateDesk from '@/components/Desk/CreaateDesk.vue'
-import {ref} from 'vue'
-const TogDesk = ref({
-  name: '',
-  colorDesck: ''
-})
-
-function updateDesk(newDesk) {
-  TogDesk.value = newDesk
-}
-
-</script>
-
-
-<script>
-export default {
-  data() {
-    return {
-      arrDesk: [],
-    }
-  }
-
-}
-</script>
 

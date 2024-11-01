@@ -11,7 +11,7 @@ export default {
 
 <template>
 
-<div class="w-[100%] h-[100vh] bg-black flex flex-row text-white p-1 gap-3.5" style="background: #01874f">
+<div class="Wrapper w-[100%] h-[100vh] text-white flex flex-row p-1 gap-3.5">
   <div class="w-[20%] h-[100%] flex flex-col gap-3.5">
     <Profile></Profile>
     <ListFunck></ListFunck>
@@ -21,3 +21,9 @@ export default {
 
 </template>
 
+<style>
+
+.Wrapper{
+  background-image:url('src/assets/fone.jpeg');
+}
+</style>

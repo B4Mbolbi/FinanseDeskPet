@@ -46,7 +46,7 @@ export default {
     <!--    Header-->
     <div class="flex w-full flex-row justify-center items-center rounded-xl overflow-hidden">
       <input v-model="colorDesk" type="color" class="Color" >
-      <input v-model="name" class="outline-0 border-0 text-[10px] w-full h-[40px] shadow p-5" type="text" placeholder="Название доски">
+      <input v-model="name" class="outline-0 border-0 text-[10px] w-full h-[40px] shadow p-5" type="text" placeholder="Название доски" @keydown.enter="addDesk">
       <button class="cursor-pointer w-[50px] h-[100%] bg-white active:bg-amber-200" @click="addDesk">+</button>
     </div>
     <!--  Center  -->
@@ -97,7 +97,6 @@ export default {
 .Desk{
   width: 100%;
   height: 100%;
-  background:transparent;
   border-radius: 20px;
 }
 .DescCard::-webkit-scrollbar {

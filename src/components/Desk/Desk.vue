@@ -69,7 +69,8 @@ export default {
 }
 .Header{
   transition: 0.2s;
-  background: peru;
+  background: transparent;
+  //border: 1px solid white;
 }
 .DescCard::-webkit-scrollbar {
   width: 10px;

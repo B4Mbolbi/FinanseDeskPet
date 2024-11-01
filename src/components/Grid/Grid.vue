@@ -55,7 +55,7 @@
 .Wrapper{
   width: 100%;
   height: 100vh;
-  background:linear-gradient(20deg,black,peru);
+  background:navajowhite;
   display: flex;
   justify-content: start;
   align-items: center;

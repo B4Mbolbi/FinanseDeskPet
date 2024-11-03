@@ -1,86 +1,41 @@
-<script>
-import Card from '@/components/Desk/Card.vue'
-import AddCard from '@/components/Desk/AddCard/AddCard.vue'
-export default {
-  components: {AddCard, Card},AddCard,
-  props:{
-    nameDesk: String,
-    colorDesk: String,
-    nullable: Boolean,
-  },
-  data() {
-    return {
-      arr: [],
-      toglleAddCard : false
-    }
-  },
-  methods: {
-    AddCard(){
-      this.toglleAddCard = !this.toglleAddCard
-    }
-  }
-}
+<script setup>
+
 </script>
 
 <template>
+  <div class="w-[50%] rounded-2xl h-[100%] flex-col text-white bg-black bg-opacity-[.6]">
+<!--      Header -->
+    <div class="w-full h-14 text-xl  bg-black font-bold bg-opacity-[.5] flex flex-row relative justify-start pl-2 items-center">Ваши финансы</div>
 
-  <div class="Desk flex flex-row justify-start items-start gap-3.5 p-1 ">
-<!--    Header-->
-      <div class="Header bg-white rounded-3xl flex justify-start items-start flex-col w-[60%] h-[70%]">
-        <h2 class="flex justify-center items-center text-[20px] w-[100%] h-[50px] p-5 text-white font-bold rounded-3xl" :style="`background: ${colorDesk}`">{{nameDesk}}</h2>
-        <AddCard :toggle-close="this.AddCard" :arr-info="this.arr" :color="colorDesk"></AddCard>
+      <div class="w-full h-[90%] bg-opacity-[.2] bg-black flex flex-row p-2 gap-3.5">
+
+        <div class="w-[50%] h-full">
+          <div class=" w-full h-[40px] flex justify-between items-center font-bold text-[12px]">
+            Доски
+            <button class="w-7 h-7 bg-amber-500 rounded-full"><img src="@/assets/plus.ico"></button>
+          </div>
+          <div class="w-full h-[90%] flex flex-col ">
+
+          </div>
+        </div>
+
+        <div class="w-[50%] h-full">
+          <div class=" w-full h-[40px] flex justify-between items-center font-bold text-[12px]">
+            Карточки
+            <button class="w-7 h-7 bg-amber-500 rounded-full"><img src="@/assets/plus.ico"></button>
+          </div>
+          <div class="w-full h-[90%]  flex flex-col gap-3.5 p-3">
+
+          </div>
+        </div>
+
       </div>
 
-
-
-
-
-<!--  Center  -->
-    <div class="DescCard h-[100%] w-[100%]">
-      <Card
-      v-for="(item, index) in arr"
-      :key="item.title"
-      :title="item.title"
-      :date="item.date"
-      :teg="item.teg"
-      :sum="parseInt(item.sum).toLocaleString()"
-      :status="item.status"
-      :color="colorDesk"
-      @delete-card="arr.splice(index, 1)"
-      />
-
-    </div>
   </div>
+
+
 </template>
 
 <style scoped>
-.Desk{
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
 
-}
-.DescCard{
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: inherit;
-  align-content: start;
-  gap: 5px;
-}
-.Header{
-  transition: 0.2s;
-  background: transparent;
-  //border: 1px solid white;
-}
-.DescCard::-webkit-scrollbar {
-  width: 10px;
-}
-.DescCard::-webkit-scrollbar-track {
-  background: transparent;
-}
-.DescCard::-webkit-scrollbar-thumb {
-  background: v-bind(colorDesk);
-  border-radius: 10px;
-
-}
 </style>

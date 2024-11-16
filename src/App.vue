@@ -1,6 +1,6 @@
 <template>
   <div class="General flex-row">
-    <Desk></Desk>
+    <auth :data="posts"></auth>
 
   </div>
 </template>
@@ -21,13 +21,28 @@
   background-repeat: no-repeat;
 
 }
+
 </style>
 
 
 <script>
-import Desk from '@/components/Desk/Desk.vue'
+import auth from '@/components/autorize/auth.vue'
+import axios from 'axios'
 export default {
-  components: {Desk}
+  components: {
+    auth
+  },
+  data() {
+    return {
+      posts:'',
+      errors:[]
+    }
+  },
 
+  async mounted() {
+    const response = await axios.get(`http://192.168.0.14/`)
+    this.posts = response.data.hash
+
+  }
 }
 </script>
